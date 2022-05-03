@@ -1,0 +1,106 @@
+.createForm{
+    position: fixed;
+    width: 350px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 8px 16px -4px rgb(9 30 66 / 25%), 0 0 0 1px rgb(9 30 66 / 8%);
+    background: white;
+    border-radius: 5px;
+}
+.createForm_header{
+    width: 95%;
+    margin: 0 auto;
+    height: 30px;
+    text-align: center;
+    padding-top: 10px;
+    border-bottom: 1px solid #eff0f3;
+    color: #5e6c84;
+    position: relative;
+    user-select: none;
+}
+.createForm_headerIcon{
+    position: absolute;
+    right: 0px;
+    top:10px;
+    font-size: 17px;
+    cursor: pointer;
+}
+.backgroundShow{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 186px;
+    background: black;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+.createForm_body{
+    width: 95%;
+    margin: 0 auto;
+}
+.project{
+    width: 150px;
+    height: auto;
+}
+.headding{
+    color: #5e6c84;
+    font-size: 12px;
+}
+.headding2{
+    color: #5e6c84;
+    font-size: 12px;
+    margin:15px 0 5px 0;
+}
+.backgroundChoose{
+    display: flex;
+    margin: 0 -5px;
+}
+.backgroundChoose_color{
+    width: 100%;
+    height: 35px;
+    border-radius: 3px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.backgroundChoose_colorBox{
+    width:16.6666667%;
+    padding: 0 5px;
+    cursor: pointer;
+    
+}
+.backgroundChoose_icon{
+    font-size: 12px;
+}
+.createForm_inputNameBox{
+    display: flex;
+}
+.createForm_inputName{
+    width:100%;
+    height: 27px;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid #0079bf;
+    padding-left: 5px;
+}
+.createForm_body_button{
+    width: 100%;
+    height: 35px;
+    outline: none;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    background: #026aa7;
+    color: white;
+    border-radius: 5px;
+}
+.createForm_body_button.block{
+    background: #eff0f3;
+    cursor: no-drop;
+    color: #c7cbd3;
+}

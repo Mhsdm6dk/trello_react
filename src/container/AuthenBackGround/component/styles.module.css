@@ -1,0 +1,41 @@
+.authen{
+    position: fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-60%);
+}
+.authen_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+.authen_icon{
+    font-size: 50px;
+    color: #0747a6;
+}
+.authen_headding{
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0 0 0 20px;
+    color: #253858;
+}
+.showBox{
+    transition: 0.5s;
+}
+.showBox.show{
+    transform: translateY(-405px);
+}
+.authen_body{
+    transition: 0.5s;
+    padding:0 30px;
+    width: 350px;
+    height: 390px;
+    overflow: hidden;
+    box-shadow: rgb(0 0 0 / 10%) 0 0 10px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+.authen_body.show{
+    height: 460px;
+}

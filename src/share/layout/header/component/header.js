@@ -1,5 +1,5 @@
 import styles from './header.module.css';
-import ais from '../../image/ais.png';
+import ais from '../../../image/ais.png';
 import { Link } from 'react-router-dom';
 export default function HeaderComponent(props){
     return <div className={styles.header}>

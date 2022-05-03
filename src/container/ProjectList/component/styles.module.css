@@ -1,0 +1,97 @@
+.projectList{
+    width: 80%;
+    margin: 20px auto;
+}
+.searchTitle{
+    color: #5e6c84;
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    margin: 30px 0 8px 0;
+}
+.searchInputBox{
+    display: flex;
+    align-items: center;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid #dfe1e6;
+    padding-left: 5px;
+    width: 200px;
+    color:  rgb(107, 119, 140);;
+}
+.searchIcon{
+
+}
+.searchInputBox:hover{
+    background: rgb(243, 243, 243);
+}
+.searchInput{
+    margin-left: 5px;
+    flex: 1;
+    outline: none;
+    border: none;
+    background: none;
+}
+.searchCount{
+    color: #5e6c84;
+    font-size:14px ;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 20px 0;
+}
+.projectBox{
+    height: 120px;
+    width: 25%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.projectList_listProject{
+    display: flex;
+    flex-wrap: wrap;
+    margin:0 -5px;
+}
+.project{
+    width: 100%;
+    background: #f5f6f7;
+    cursor: pointer;
+    height: 100%;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.project:hover{
+    background: #dbdfdf;
+}
+.project_create{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.project_title{
+    position: relative;
+    top:10px;
+    left: 10px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.project_icon{
+    position: absolute;
+    bottom: 10px;
+    right: -50px;
+    transition: 0.35s;
+}
+.project:hover .project_icon{
+    transform: translateX(-60px);
+}
+@media (max-width:1024px){
+    .projectBox{
+        width: 50%;
+    }
+}
+@media(max-width:768px){
+    .projectBox{
+        width: 100%;
+    }
+}

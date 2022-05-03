@@ -1,0 +1,40 @@
+.projectDetail_header{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.projectDetail_starIcon{
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(228, 228, 228);
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 15px;
+}
+.projectDetail_starIcon:hover{
+    color: green;
+    font-size: 17px;
+}
+.projectDetail_name{
+    margin: 0;
+}
+.projectDetail_body{
+    display: flex;
+    flex-wrap: wrap;
+}
+.projectDetail_listTask{
+    width: 272px;
+    margin: 10px;
+    height: 200px;
+    background: #ebecf0;
+    border-radius: 4px;
+    padding: 10px;
+}
+.listTaskName{
+    color: #2b3d5c;
+    margin: 0;
+}
