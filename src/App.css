@@ -2,3 +2,10 @@
     color: white;
     font-size: 25px;
 }
+.App{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+    background: #f9fafc;
+}
