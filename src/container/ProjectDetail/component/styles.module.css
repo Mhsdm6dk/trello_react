@@ -26,15 +26,3 @@
     display: flex;
     flex-wrap: wrap;
 }
-.projectDetail_listTask{
-    width: 272px;
-    margin: 10px;
-    height: 200px;
-    background: #ebecf0;
-    border-radius: 4px;
-    padding: 10px;
-}
-.listTaskName{
-    color: #2b3d5c;
-    margin: 0;
-}
