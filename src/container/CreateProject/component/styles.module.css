@@ -1,7 +1,6 @@
 .createForm{
     position: fixed;
     width: 350px;
-    height: 500px;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -98,6 +97,7 @@
     background: #026aa7;
     color: white;
     border-radius: 5px;
+    margin-bottom: 30px;
 }
 .createForm_body_button.block{
     background: #eff0f3;

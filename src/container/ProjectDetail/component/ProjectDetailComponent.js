@@ -1,5 +1,5 @@
 import React from 'react'
-import CardContainer from '../../Card/CardContainer';
+import CardContainer from '../../CardList/CardContainer';
 import styles from './styles.module.css';
 function ProjectDetailComponent(props) {
     return (

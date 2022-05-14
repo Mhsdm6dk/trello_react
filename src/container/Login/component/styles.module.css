@@ -67,3 +67,10 @@
 .signup:hover{
     text-decoration: underline;
 }
+.otpBox{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}

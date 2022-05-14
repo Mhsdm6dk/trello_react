@@ -1,4 +1,5 @@
 import React from 'react'
+import CardDetailContainer from '../../CardDetail/CardDetailContainer';
 import styles from './styles.module.css';
 function CardComponent(props) {
     return (
@@ -18,7 +19,9 @@ function CardComponent(props) {
                     </span>
                 </div>
             </div>
-            <div className={styles.taskBox}>
+            <div className={styles.taskBox} onClick={function(){
+                props.setCardDetailShow('dsfsdf');
+            }}>
                 <p className={styles.taskName}>
                     deploy
                 </p>
@@ -58,6 +61,7 @@ function CardComponent(props) {
         <div style={{flex:1}}>
 
         </div>
+        {props.cardDetailShow && <CardDetailContainer setCardDetailShow={props.setCardDetailShow}/>}
         </div>
     )
 }

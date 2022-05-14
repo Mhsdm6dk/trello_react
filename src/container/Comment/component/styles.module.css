@@ -1,0 +1,89 @@
+.commentBox {
+  display: flex;
+  margin-left: -8px;
+  margin-top: 20px;
+}
+.avatarBox {
+  height: 30px;
+  width: 30px;
+  border-radius: 100px;
+  background: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 400;
+  font-size: 12px;
+  margin-right: 5px;
+}
+.commentDetailBox {
+  flex: 1;
+}
+.commentDetailBox_name {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #172b4d;
+}
+.commentDetailBox_comment {
+  box-shadow: 0 1px 2px -1px #091e4240, 0 0 0 1px #091e4214;
+  height: 36px;
+  padding-left: 10px;
+  border-radius: 4px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #172b4d;
+  background: white;
+}
+.commentDetail {
+}
+.commentDetailBox_featureBox {
+  margin-top: 3px;
+}
+.commentDetailBox_feature {
+  font-size: 12px;
+  color: #54698d;
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.commentDetailBox_feature:hover {
+  color: #313d52;
+}
+.handleCommentBox {
+  box-shadow: 0 4px 8px -2px #091e4240, 0 0 0 1px #091e4214;
+  border-radius: 4px;
+  padding: 0 0 10px 0;
+  margin-top: 5px;
+  background: white;
+}
+.handleCommentBox_input {
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  height: 36px;
+}
+.buttonBox {
+  display: flex;
+  align-items: center;
+}
+.saveButton {
+  height: 32px;
+  width: 46px;
+  margin: 0 10px;
+  background: #0079bf;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.saveButton:hover{
+    background: #0082ce;
+}
+.exitButton {
+  font-size: 25px;
+  cursor: pointer;
+  color: #54698d;
+}

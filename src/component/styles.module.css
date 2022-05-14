@@ -1,0 +1,26 @@
+.login_ggButton{
+    box-shadow: rgb(0 0 0 / 20%) 1px 1px 5px 0;
+    height: 35px;
+    width: 100%;
+    outline: none;
+    border: none;
+    background:white;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login_or{
+    text-align: center;
+}
+.login_ggIcon{
+    height: 20px;
+}
+.login_ggButtonText{
+    color: #505f79;
+    font-size: 14px;
+    line-height: 32px;
+    font-weight: bold;
+    margin-left: 5px;
+}
