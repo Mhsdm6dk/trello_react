@@ -1,0 +1,39 @@
+.memberPage{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.memberBox{
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+}
+.memberNabar_content{
+    color: #5e6c84;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    margin: 0;
+    padding: 8px;
+}
+.workspaceNameBox{
+    border-radius: 3px;
+    display: block;
+    font-weight: 700;
+    padding: 6px 8px;
+    text-decoration: none;
+    color: #172b4d;
+    background-color: #dfe1e6;
+}
+.memberNavbarBox{
+    width: fit-content;
+    margin-right: 25px;
+}
+.memberBody{
+    flex: 1;
+    background: gray;
+}
+.memberBody_line{
+    border-bottom: 1px solid gray;
+}

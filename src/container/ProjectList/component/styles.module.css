@@ -85,6 +85,10 @@
 .project:hover .project_icon{
     transform: translateX(-60px);
 }
+.projectBox_link{
+    text-decoration: none;
+    color: black;
+}
 @media (max-width:1024px){
     .projectBox{
         width: 50%;

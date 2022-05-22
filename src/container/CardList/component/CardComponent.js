@@ -6,32 +6,28 @@ function CardComponent(props) {
         <div style={{display:'flex',flexDirection:"column"}}>
             <div className={styles.projectDetail_listTask}>
             <h5 className={styles.listTaskName}>
-                Cần làm
+                {props.card?.listDTO?.title}
             </h5>
-            <div className={styles.taskBox}>
-                <p className={styles.taskName}>
-                    deploy
-                </p>
-                <div className={styles.commentCountBox}>
-                    <i class="fa-solid fa-comment"></i>
-                    <span className={styles.commentCount}>
-                        0
-                    </span>
-                </div>
-            </div>
-            <div className={styles.taskBox} onClick={function(){
-                props.setCardDetailShow('dsfsdf');
-            }}>
-                <p className={styles.taskName}>
-                    deploy
-                </p>
-                <div className={styles.commentCountBox}>
-                    <i class="fa-solid fa-comment"></i>
-                    <span className={styles.commentCount}>
-                        0
-                    </span>
-                </div>
-            </div>
+            {
+                props.card?.cardDTOList.map((card)=><div className={styles.taskBox} onClick={function(){
+                    props.setCardDetailShow(card.id);
+                }}>
+                    <p className={styles.taskName}>
+                        {
+                            card?.title
+                        }
+                    </p>
+                    <div className={styles.commentCountBox}>
+                        <i className="fa-solid fa-comment"></i>
+                        <span className={styles.commentCount}>
+                            {
+                                card?.countComment
+                            }
+                        </span>
+                    </div>
+                </div>)
+            }
+            
             {
                 props.inputShow ? <div className={styles.inputForm}>
                         <div className={styles.inputBox}>
@@ -61,7 +57,7 @@ function CardComponent(props) {
         <div style={{flex:1}}>
 
         </div>
-        {props.cardDetailShow && <CardDetailContainer setCardDetailShow={props.setCardDetailShow}/>}
+        {props.cardDetailShow && <CardDetailContainer id={props.cardDetailShow} setCardDetailShow={props.setCardDetailShow}/>}
         </div>
     )
 }

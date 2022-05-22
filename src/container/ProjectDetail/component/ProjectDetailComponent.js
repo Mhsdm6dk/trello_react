@@ -9,12 +9,9 @@ function ProjectDetailComponent(props) {
                 <i className={"fa-regular fa-star " + styles.projectDetail_starIcon}></i>
             </div>
             <div className={styles.projectDetail_body}>
-                <CardContainer/>
-                <CardContainer/>
-                <CardContainer/>
-                <CardContainer/>
-                <CardContainer/>
-                <CardContainer/>
+                {
+                    props.projectData?.list.map((card) => <CardContainer card={card} />)
+                }
 
             </div>
         </div>

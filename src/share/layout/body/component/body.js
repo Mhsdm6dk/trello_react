@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
+import MemberContainer from '../../../../container/Member/MemberContainer';
 import ProjectDetailContainer from '../../../../container/ProjectDetail/ProjectDetailContainer';
 import ProjectListContainer from '../../../../container/ProjectList/ProjectListContainer';
 import NavbarContainer from '../../navbar/navbar';
@@ -35,7 +36,7 @@ function BodyComponent(props) {
                 <div className={styles.body_body}>
                     <Switch>
                         <Route path='/member'>
-                            <div>mb</div>
+                            <MemberContainer/>
                         </Route>
                         <Route path='/setting'>
                             <div>st</div>

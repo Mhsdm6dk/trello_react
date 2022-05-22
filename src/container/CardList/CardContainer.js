@@ -6,7 +6,7 @@ function CardContainer(props) {
     const [cardNameInput,setCardNameInput]=useState('');
     const [cardDetailShow,setCardDetailShow]=useState('');
     return (
-        <CardComponent cardDetailShow={cardDetailShow} setCardDetailShow={setCardDetailShow} inputShow={inputShow} setInputShow={setInputShow} cardNameInput={cardNameInput} setCardNameInput={setCardNameInput}/>
+        <CardComponent cardDetailShow={cardDetailShow} card={props.card} setCardDetailShow={setCardDetailShow} inputShow={inputShow} setInputShow={setInputShow} cardNameInput={cardNameInput} setCardNameInput={setCardNameInput}/>
     )
 }
 

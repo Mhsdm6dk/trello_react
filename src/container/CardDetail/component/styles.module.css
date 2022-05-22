@@ -112,6 +112,13 @@
     cursor: pointer;
     color: #42526e;
 }
+.cardDescribes{
+    color: #172b4d;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
 .commentAvatarBox{
     border-radius: 100%;
     height: 30px;
