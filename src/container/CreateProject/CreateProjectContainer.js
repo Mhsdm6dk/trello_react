@@ -7,8 +7,7 @@ function CreateProjectContainer(props) {
     const [nameInput, setNameInput] = useState("");
     const arrayColor = ['black', '#0079bf', '#d29034', '#519839', '#b04632', '#89609e'];
     const queryClient =new QueryClient();
-    const mutation = useMutation((name,color) => {
-        console.log(color)
+    const mutation = useMutation(() => {
         return axiosConfig.post('/api/user/boards',
             {
                 "background": arrayColor[colorChoose],
@@ -17,8 +16,9 @@ function CreateProjectContainer(props) {
             }
         )
         .then((data)=>{
-            console.log(data);
-            // queryClient.setQueryData('getListProject');
+            alert('ok')
+            // queryClient.setQueryData('getListProject',(listProject)=>[...listProject,data]);
+            // props.setCreateFormShow(false);
         })
     })
     return (

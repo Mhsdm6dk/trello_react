@@ -112,6 +112,7 @@ const deletel = (url) => {
 }
 
 const handleError = (error, rejected) => {
+    alert('Có lỗi xảy ra, vui lòng thử lại sau');
     if (error.response) {
         if (error.response.status === 401) {
             console.log(error.response, "hihi");

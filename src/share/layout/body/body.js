@@ -14,9 +14,6 @@ function BodyContainer(props) {
                 setShowData(true);
                 localStorage.setItem('user', response.data);
             })
-            .catch(() => {
-                history.push('/login');
-            })
     }, [])
     return (
         showData && <BodyComponent showNavbar={showNavbar} setShowNavbar={setShowNavbar} />
