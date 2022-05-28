@@ -2,6 +2,12 @@
     width: 80%;
     margin: 20px auto;
 }
+.loadingDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
 .searchTitle{
     color: #5e6c84;
     display: block;

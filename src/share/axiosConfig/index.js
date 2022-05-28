@@ -6,7 +6,7 @@ const getHeader = () => {
         headers: {
             "Content-Type": "application/json;charset=UTF-8",
             "Access-Control-Allow-Origin": "*",
-            authorization: token
+            authorization: `Bearer ${token}`
         },
     };
     // console.log(axiosConfig);
@@ -18,7 +18,7 @@ const getHeaderUpload = () => {
         headers: {
             "Content-Type": "multipart/form-data",
             "Access-Control-Allow-Origin": "*",
-            authorization: token,
+            authorization: `Bearer ${token}`,
         },
     };
     // console.log(axiosConfig);

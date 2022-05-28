@@ -1,8 +1,12 @@
 import React from 'react'
 import CardContainer from '../../CardList/CardContainer';
 import styles from './styles.module.css';
-function ProjectDetailComponent(props) {
+import FadeLoader from 'react-spinners/FadeLoader';
+function ProjectDetailComponent({ isLoading, projectData, id }) {
     return (
+        isLoading?<div className={styles.loadingDiv}>
+        <FadeLoader loading={isLoading} color={'#1641a1'}/>
+    </div>:
         <div className={styles.projectDetail}>
             <div className={styles.projectDetail_header}>
                 <h3 className={styles.projectDetail_name}>Lập trình nodejs</h3>
@@ -10,7 +14,7 @@ function ProjectDetailComponent(props) {
             </div>
             <div className={styles.projectDetail_body}>
                 {
-                    props.projectData?.list.map((card) => <CardContainer card={card} />)
+                    projectData?.list.map((card) => <CardContainer card={card} />)
                 }
 
             </div>

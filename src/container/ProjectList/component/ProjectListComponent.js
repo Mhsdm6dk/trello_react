@@ -2,9 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import CreateProjectContainer from '../../CreateProject/CreateProjectContainer';
 import styles from './styles.module.css';
-function ProjectListComponent(props) {
+import FadeLoader from "react-spinners/FadeLoader";
+function ProjectListComponent({ isLoading, listProject, createFormShow, setCreateFormShow }) {
 
     return (
+        isLoading?<div className={styles.loadingDiv}>
+            <FadeLoader loading={isLoading} color={'#1641a1'}/>
+        </div>:
         <div className={styles.projectList}>
             <div className={styles.searchBox}>
                 <p className={styles.searchTitle}>
@@ -25,7 +29,7 @@ function ProjectListComponent(props) {
                 <div className={styles.projectBox}>
                     <div className={styles.project} onClick={
                         function () {
-                            props.setCreateFormShow(true);
+                            setCreateFormShow(true);
                         }
                     }>
                         <span className={styles.project_create}>
@@ -33,7 +37,7 @@ function ProjectListComponent(props) {
                         </span>
                     </div>
                 </div>
-                {props.listProject.map((project, index) => {
+                {listProject.map((project, index) => {
                     return <div key={index} className={styles.projectBox}>
                         <Link className={styles.projectBox_link} to={`/projectDetail/${project?.id}`}>
                             <div className={styles.project}>
@@ -47,7 +51,7 @@ function ProjectListComponent(props) {
                 })}
             </div>
             {
-                props.createFormShow ? <CreateProjectContainer setCreateFormShow={props.setCreateFormShow} /> : <></>
+                createFormShow ? <CreateProjectContainer setCreateFormShow={setCreateFormShow} /> : <></>
             }
         </div>
     )

@@ -38,6 +38,9 @@ export default function HeaderComponent(props){
             </div>
             <div className={styles.avatar}>
                 NH
+                <div className={styles.profileCard}>
+
+                </div>
             </div>
         </div>
     </div>

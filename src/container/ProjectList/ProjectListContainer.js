@@ -1,22 +1,14 @@
 
 import React, { useEffect, useState } from 'react'
+import { useQuery } from 'react-query';
 import axiosConfig from '../../share/axiosConfig';
 import ProjectListComponent from './component/ProjectListComponent'
 
 function ProjectListContainer(props) {
     const [createFormShow, setCreateFormShow] = useState(false);
-    const [listProject, setListProject] = useState([]);
-    useEffect(() => {
-        axiosConfig.get('/api/user/boardURs/boards')
-            .then((response) => {
-                setListProject(response);
-            })
-            .catch(() => {
-                alert('Có lỗi xảy ra, vui lòng thử lại sau')
-            })
-    }, [])
+    const {data: listProject, isLoading, isError,isSuccess}=useQuery('getListProject',()=>axiosConfig.get('/api/user/boardURs/boards'));
     return (
-        <ProjectListComponent listProject={listProject} createFormShow={createFormShow} setCreateFormShow={setCreateFormShow} />
+        <ProjectListComponent isLoading={isLoading} listProject={listProject} createFormShow={createFormShow} setCreateFormShow={setCreateFormShow} />
     )
 }
 

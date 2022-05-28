@@ -43,7 +43,9 @@ function CreateProjectComponent(props) {
 
                     </input>
                 </div>
-                <button className={props.nameInput != '' ? styles.createForm_body_button : styles.createForm_body_button + " " + styles.block}>
+                <button className={props.nameInput != '' ? styles.createForm_body_button : styles.createForm_body_button + " " + styles.block} onClick={() => {
+                    props.mutation.mutate()
+                }}>
                     Tạo mới
                 </button>
             </div>
