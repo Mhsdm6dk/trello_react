@@ -1,19 +1,14 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { SERVER } from '../../share/env'
+import axiosConfig from '../../share/axiosConfig';
 import CardDetailComponent from './component/CardDetailComponent'
 
 function CardDetailContainer(props) {
     const [cardData,setCardData]=useState();
     useEffect(()=>{
-        axios.get(`${SERVER}/api/user/cards/id=${props.id}`,{
-            headers:{
-                Authorization:`Bearer ${localStorage.getItem('token')}`
-            }
-        })
+        axiosConfig.get(`/api/user/cards/id=${props.id}`)
         .then((response)=>{
-            console.log(response.data);
-            setCardData(response.data);
+            console.log(response);
+            setCardData(response);
         })
         .catch(()=>{
             alert('Có lỗi xảy ra, vui lòng thử lại')

@@ -1,1 +1,0 @@
-export const SERVER='https://trello-like-vip.herokuapp.com';

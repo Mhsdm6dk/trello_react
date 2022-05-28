@@ -5,21 +5,25 @@ import BodyContainer from './share/layout/body/body';
 import { Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import AuthenContainer from './container/AuthenBackGround/AuthenContainer';
+import { QueryClient,QueryClientProvider } from 'react-query';
 
 function App() {
+  const queryClient = new QueryClient();
   return (
-    <div className="App">
-      <Switch>
-        <Route path='/login'>
-          <AuthenContainer/>
-        </Route>
-        <Route path='*'>
-          <HeaderContainer>
-          </HeaderContainer>
-          <BodyContainer />
-        </Route>
-      </Switch>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className="App">
+        <Switch>
+          <Route path='/login'>
+            <AuthenContainer />
+          </Route>
+          <Route path='*'>
+            <HeaderContainer>
+            </HeaderContainer>
+            <BodyContainer />
+          </Route>
+        </Switch>
+      </div>
+    </QueryClientProvider>
   );
 }
 

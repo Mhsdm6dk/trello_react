@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from '../../Login/component/styles.module.css';
 import gg from '../../../share/image/gg.jpg';
-import OtpForm from 'react-otp-ui'
 function SignupComponent(props) {
     return (
         <div className={styles.login}>
