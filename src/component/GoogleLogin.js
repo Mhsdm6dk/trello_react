@@ -10,7 +10,7 @@ function HandleLogin() {
   }, []);
 
   const handleFailure = useCallback(() => {
-    alert("Đăng nhập thất bại, vui lòng thử lại sau");
+
   });
 
   return (

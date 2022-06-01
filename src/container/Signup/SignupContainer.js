@@ -23,15 +23,10 @@ function SignupContainer(props) {
                 userName: userNameInput
             })
                 .then(() => {
-                    alert('Đăng kí tài khoản thành công, vui lòng đăng nhập để sử dụng');
                     props.setShowSignup(false);
-                })
-                .catch(() => {
-                    alert('Có lỗi xảy ra, vui lòng thử lại sau');
                 })
         }
         else {
-            alert('Bạn nhập thông tin chưa đúng, vui lòng kiểm tra lại');
         }
     }
     return (

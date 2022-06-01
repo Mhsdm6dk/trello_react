@@ -1,0 +1,60 @@
+.addCardBox{
+    width: 272px;
+    margin: 10px;
+    background: #ebecf0;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+}
+.inputBox{
+    width: 100%;
+    display: flex;
+}
+.input{
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: 1px solid rgb(22, 144, 243);
+    border-radius: 5px;
+    padding-left: 8px;
+}
+.addButton{
+    height: 35px;
+    width: fit-content;
+    background: rgb(22, 144, 243);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+.buttonList{
+    display: flex;
+    margin-top: 10px;
+}
+.exitIcon{
+    font-size: 25px;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.exitIcon:hover{
+    background: #e2e2e2;
+    border-radius: 5px;
+    
+}
+.addButton1{
+    font-size: 14px;
+    font-weight: 500;
+    color: #636970;
+}
+.addCard_icon{
+    color: #636970;
+    font-weight: 22px;
+    margin-right: 5px;
+}

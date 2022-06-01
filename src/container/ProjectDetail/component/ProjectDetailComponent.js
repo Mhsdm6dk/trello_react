@@ -1,7 +1,8 @@
 import React from 'react'
-import CardContainer from '../../CardList/CardContainer';
+import CardContainer from '../../List/CardContainer';
 import styles from './styles.module.css';
 import FadeLoader from 'react-spinners/FadeLoader';
+import CardCreatContainer from '../../CardCreate';
 function ProjectDetailComponent({ isLoading, projectData, id }) {
     return (
         isLoading?<div className={styles.loadingDiv}>
@@ -16,7 +17,7 @@ function ProjectDetailComponent({ isLoading, projectData, id }) {
                 {
                     projectData?.list.map((card) => <CardContainer card={card} />)
                 }
-
+                <CardCreatContainer boardId={id}/>
             </div>
         </div>
     )

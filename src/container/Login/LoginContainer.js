@@ -20,9 +20,6 @@ function LoginContainer(props) {
                 localStorage.setItem('token', data.token);
                 history.push('/');
             })
-            .catch(() => {
-                alert('hello')
-            })
     }
     return (
         <LoginComponent login={login} userNameInput={userNameInput} setUserNameInput={setUserNameInput} passwordInput={passwordInput} setPasswordInput={setPasswordInput} setShowSignup={props.setShowSignup} />

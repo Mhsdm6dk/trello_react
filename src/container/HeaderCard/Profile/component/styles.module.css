@@ -1,0 +1,70 @@
+.ProfileCard {
+  width: 300px;
+  top: 50px;
+  background: white;
+  right: 15px;
+  position: absolute;
+  z-index: 10;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px -4px rgb(9 30 66 / 25%), 0 0 0 1px rgb(9 30 66 / 8%);
+  padding: 15px;
+}
+.exitButton {
+  font-size: 20px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+}
+.header {
+  height: 50px;
+  color: black;
+  border-bottom: 1px solid rgba(9, 30, 66, 0.13);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.infoBox {
+  margin: 10px 0;
+  height: 40px;
+  display: flex;
+}
+.avatarBox {
+  width: 40px;
+  background: green;
+  border-radius: 100px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.emailBox {
+  flex: 1;
+  margin-left: 5px;
+}
+.email {
+  font-size: 9pt;
+  color: #b3bac5;
+}
+.name {
+  color: #172b4d;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+.logout {
+  color: #172b4d;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  border-top: 1px solid rgba(9, 30, 66, 0.13);
+  cursor: pointer;
+}
+.listDiv {
+  color: #172b4d;
+  border-top: 1px solid rgba(9, 30, 66, 0.13);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}

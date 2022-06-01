@@ -58,9 +58,27 @@ function CardDetailComponent(props) {
                     </div>
                     <div className={styles.cardBox_bodyNavbar}>
                         <h6 className={styles.navbar_hedding}>Thêm vào thẻ</h6>
-                        <div className={styles.navbar_feature}>
-                            <i className={"fa-regular fa-user " + styles.navbar_featureIcon}></i>
-                            <span className={styles.navbar_featureName}>Thành viên</span>
+                        <div style={{position:"relative"}}>
+                            <div className={styles.navbar_feature} onClick={()=>{
+                                props.setMemberShow(show=>!show);
+                            }}>
+                                <i className={"fa-regular fa-user " + styles.navbar_featureIcon}></i>
+                                <span className={styles.navbar_featureName}>Thành viên</span>
+
+                            </div>
+                            {
+                                props.memberShow?<div className={styles.listMember}>
+                                <div className={styles.listMember_header}>
+                                    <i className={"fa-solid fa-xmark " + styles.memberExitIcon} onClick={function () {
+                                        props.setMemberShow(false);
+                                    }}></i>
+                                    Thành viên
+                                </div>
+                                <div className={styles.listMember_body}>
+
+                                </div>
+                            </div>:<></>
+                            }
                         </div>
                         <div className={styles.navbar_feature}>
                             <i className={"fa-solid fa-arrow-right " + styles.navbar_featureIcon}></i>

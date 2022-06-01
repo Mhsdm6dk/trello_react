@@ -3,9 +3,9 @@ import ProfileComponent from './component'
 
 function ProfileCotainer(props) {
     return (
-        <div>
-            <ProfileComponent/>
-        </div>
+
+        <ProfileComponent setShowProfile={props.setShowProfile}/>
+
     )
 }
 

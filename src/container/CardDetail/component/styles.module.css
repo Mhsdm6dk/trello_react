@@ -83,7 +83,32 @@
 .navbar_hedding{
     margin: 0;
 }
+.listMember{
+    box-shadow: 0 8px 16px -4px rgb(9 30 66 / 25%), 0 0 0 1px rgb(9 30 66 / 8%);
+    border-radius: 5px;
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    padding: 10px;
+    background: white;
+    top:38px;
+    z-index: 5;
+}
+.memberExitIcon{
+    font-size: 15px;
+    position: absolute;
+    right: 10px;
+    top:8px;
+    cursor: pointer;
+    color: #42526e;
+}
+.listMember_header{
+    text-align: center;
+    height: 35px;
+    border-bottom: 1px solid #091e4221;
+}
 .navbar_feature{
+    position: relative;
     color: #172b4d;
     height: 32px;
     display: flex;
