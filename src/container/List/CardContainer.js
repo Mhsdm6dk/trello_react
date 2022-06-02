@@ -25,7 +25,7 @@ function CardContainer(props) {
         })
     }
     return (
-        <CardComponent mutate={mutate} deleteFunction={deleteFunction} cardDetailShow={cardDetailShow} card={props.card} setCardDetailShow={setCardDetailShow} inputShow={inputShow} setInputShow={setInputShow} cardNameInput={cardNameInput} setCardNameInput={setCardNameInput} />
+        <CardComponent mutate={mutate} deleteFunction={deleteFunction} projectData={props.projectData} cardDetailShow={cardDetailShow} card={props.card} setCardDetailShow={setCardDetailShow} inputShow={inputShow} setInputShow={setInputShow} cardNameInput={cardNameInput} setCardNameInput={setCardNameInput} />
     )
 }
 

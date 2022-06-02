@@ -87,12 +87,33 @@
     box-shadow: 0 8px 16px -4px rgb(9 30 66 / 25%), 0 0 0 1px rgb(9 30 66 / 8%);
     border-radius: 5px;
     position: absolute;
-    height: 300px;
     width: 300px;
     padding: 10px;
     background: white;
     top:38px;
     z-index: 5;
+}
+.listMember_content{
+    color: #5e6c84;
+    font-size: 12px;
+    font-weight: 600;
+}
+.listMember_body{
+    max-height: 400px;
+    cursor: pointer;
+    overflow: auto;
+}
+.listChoose{
+    height: 30px;
+    width: 100%;
+    background: #eaecef;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    color:#778498;
+    margin-bottom: 10px;
 }
 .memberExitIcon{
     font-size: 15px;
@@ -168,6 +189,51 @@
     display: flex;
    
     
+}
+.showDescriptionInput{
+
+}
+.buttonList{
+    display: flex;
+    height: 30px;
+    margin-top: 10px;
+}
+.saveButton{
+    padding: 0 10px;
+    color: white;
+    border-radius: 4px;
+    background: #0079bf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.cancleButton{
+    padding: 0 10px;
+    cursor: pointer;
+    border-radius: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cancleButton:hover{
+    background: #eaecef;
+}
+.handleButton{
+    color: #172b4d;
+    font-size: 14px;
+    font-weight: 400;
+    height: 30px;
+    background: #eaecef;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 8px;
+    margin-left: 10px;
 }
 .commentInput:hover{
     box-shadow: 0 4px 8px -2px #091e4240, 0 0 0 1px #091e4214;
