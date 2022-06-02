@@ -1,39 +1,202 @@
-.memberPage{
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.memberPage {
+  height: 100%;
+  padding-bottom: 50px;
 }
-.memberBox{
-    width: 80%;
-    margin: 20px auto;
-    display: flex;
+.memberBox {
+  width: 80%;
+  margin: 20px auto;
+  display: flex;
 }
-.memberNabar_content{
-    color: #5e6c84;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 16px;
-    margin: 0;
-    padding: 8px;
+.memberNabar_content {
+  color: #5e6c84;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  margin: 0;
+  padding: 8px;
 }
-.workspaceNameBox{
-    border-radius: 3px;
-    display: block;
-    font-weight: 700;
-    padding: 6px 8px;
-    text-decoration: none;
-    color: #172b4d;
-    background-color: #dfe1e6;
+.memberBody_describes {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #172b4d;
 }
-.memberNavbarBox{
-    width: fit-content;
-    margin-right: 25px;
+.memberBody_heading {
+  font-size: 18px;
+  color: #172b4d;
+  line-height: 30px;
+  margin: 0 0 15px 0;
 }
-.memberBody{
-    flex: 1;
-    background: gray;
+.workspaceNameBox {
+  border-radius: 3px;
+  display: block;
+  font-weight: 700;
+  padding: 6px 8px;
+  text-decoration: none;
+  color: #172b4d;
+  background-color: #dfe1e6;
 }
-.memberBody_line{
-    border-bottom: 1px solid gray;
+.memberNavbarBox {
+  width: fit-content;
+  margin-right: 25px;
+}
+.memberBody {
+  flex: 1;
+}
+.memberBody_line {
+  border-bottom: 1px solid rgba(9, 30, 66, 0.13);
+  margin-bottom: 16px;
+}
+.searchBox {
+  display: flex;
+  justify-content: space-between;
+  height: 32px;
+}
+.addMemberButton {
+  background: #0079bf;
+  color: white;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  user-select: none;
+  width: 230px;
+  height: 32px;
+}
+.resultBox {
+  position: absolute;
+  min-width: 300px;
+  border-radius: 4px;
+  background: white;
+  box-shadow: 0 8px 16px -4px #091e4240, 0 0 0 1px #091e4214;
+  padding: 10px 7px;
+  top: 40px;
+}
+.resultBox_header {
+  height: 35px;
+  color: #5e6c84;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans,
+    Ubuntu, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(9, 30, 66, 0.13);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.exitIcon {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  cursor: pointer;
+}
+
+.addMemberButton:hover {
+  background: #006faf;
+}
+.searchNameInput {
+  border: 2px solid #dfe1e6;
+  outline: none;
+  border-radius: 3px;
+  padding-left: 5px;
+  width: 230px;
+}
+.searchNameInput:focus {
+  border: 2px solid #0079bf;
+}
+.addMemberIcon {
+  margin-right: 10px;
+}
+.memberNameBox {
+  margin: 10px 0;
+  height: 40px;
+  display: flex;
+}
+.avatarBox {
+  width: 40px;
+  background: green;
+  border-radius: 100px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.emailBox {
+  flex: 1;
+  margin-left: 5px;
+}
+.email {
+  font-size: 9pt;
+  color: #b3bac5;
+}
+.name {
+  color: #172b4d;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+.memberElementBox {
+  padding: 10px 0;
+  border-top: 1px solid #dfe1e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.listMember {
+  margin-top: 20px;
+}
+.exitButton {
+  background: #b3bac5;
+  border-radius: 4px;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+}
+.memberPage {
+  padding-top: 10px;
+}
+.resultBoxTitle_icon{
+    font-size: 14px;
+    margin-right: 5px;
+}
+.resultBoxTitle{
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  color: #172b4d;
+  font-weight: 500;
+}
+.resultBox_search{
+  border: none;
+  outline: none;
+  width: 100%;
+  border: 2px solid #b3bac5;
+  box-sizing: border-box;
+  border-radius: 3px;
+  height: 30px;
+  padding-left: 5px;
+}
+.resultBox_search:focus{
+  border: 2px solid #0079bf;
+
+}
+.addButton{
+  background: #d9e0eb;
+  border-radius: 4px;
+  margin-top: 10px;
+  height: 35px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  user-select: none;
+  align-items: center;
+}
+.listUserBox{
+  max-height: 400px;
+  overflow: auto;
 }
