@@ -1,21 +1,21 @@
 import React from 'react'
-import CardCreatContainer from '../../CardCreate';
 import CardDetailContainer from '../../CardDetail/CardDetailContainer';
 import styles from './styles.module.css';
+
 function CardComponent(props) {
     return (
-        <div style={{ display: 'flex', flexDirection: "column" }}>
+        <div style={{display: 'flex', flexDirection: "column"}}>
             <div className={styles.projectDetail_listTask}>
                 <i className={"fa-solid fa-trash-can " + styles.deleteIcon} onClick={
                     () => props.deleteFunction()
-                }></i>
+                }/>
                 <h5 className={styles.listTaskName}>
                     {props.card?.listDTO?.title}
                 </h5>
                 {
-                    props.card?.cardDTOList.map((card) => <div className={styles.taskBox} onClick={function () {
-                        props.setCardDetailShow(card.id);
-                    }}>
+                    props.card?.cardDTOList.map((card) => <div className={styles.taskBox} onClick={() =>
+                        props.setCardDetailShow(card.id)
+                    }>
                         <p className={styles.taskName}>
                             {
                                 card?.title
@@ -37,7 +37,7 @@ function CardComponent(props) {
                         <div className={styles.inputBox}>
                             <input value={props.cardNameInput} onChange={(e) => {
                                 props.setCardNameInput(e.target.value);
-                            }} className={styles.input} autoFocus placeholder='Nhập tiêu đề cho thẻ này...' />
+                            }} className={styles.input} autoFocus placeholder='Nhập tiêu đề cho thẻ này...'/>
                         </div>
                         <div className={styles.buttonBox}>
                             <button className={styles.addCardButton} onClick={
@@ -64,10 +64,11 @@ function CardComponent(props) {
                     </div>
                 }
             </div>
-            <div style={{ flex: 1 }}>
+            <div style={{flex: 1}}>
 
             </div>
-            {props.cardDetailShow && <CardDetailContainer id={props.cardDetailShow} setCardDetailShow={props.setCardDetailShow} />}
+            {props.cardDetailShow &&
+                <CardDetailContainer id={props.cardDetailShow} setCardDetailShow={props.setCardDetailShow}/>}
         </div>
     )
 }

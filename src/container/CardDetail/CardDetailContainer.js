@@ -7,8 +7,10 @@ function CardDetailContainer(props) {
     const [memberShow,setMemberShow]=useState(false);
     const {data: cardData, isLoading, isError, isSuccess} = useQuery('getCardDetail', () => axiosConfig.get(`/api/user/cards/id=${props.id}`));
 
+
     return (
-        <CardDetailComponent memberShow={memberShow} setMemberShow={setMemberShow} cardData={cardData} setCardDetailShow={props.setCardDetailShow} />
+        <CardDetailComponent memberShow={memberShow} setMemberShow={setMemberShow} cardData={cardData}
+                             setCardDetailShow={props.setCardDetailShow} idCard={props.id}/>
     )
 }
 
