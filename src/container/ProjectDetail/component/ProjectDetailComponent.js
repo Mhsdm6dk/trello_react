@@ -15,7 +15,7 @@ function ProjectDetailComponent({ isLoading, projectData, id }) {
             </div>
             <div className={styles.projectDetail_body}>
                 {
-                    projectData?.list.map((card) => <CardContainer card={card} />)
+                    projectData?.list.map((card) => <CardContainer card={card} projectData={projectData}/>)
                 }
                 <CardCreatContainer boardId={id}/>
             </div>

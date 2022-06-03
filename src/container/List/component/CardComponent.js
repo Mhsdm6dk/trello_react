@@ -67,8 +67,7 @@ function CardComponent(props) {
             <div style={{flex: 1}}>
 
             </div>
-            {props.cardDetailShow &&
-                <CardDetailContainer id={props.cardDetailShow} setCardDetailShow={props.setCardDetailShow}/>}
+            {props.cardDetailShow && <CardDetailContainer projectData={props.projectData} id={props.cardDetailShow} setCardDetailShow={props.setCardDetailShow} />}
         </div>
     )
 }
