@@ -41,7 +41,7 @@ function CardDetailContainer(props) {
         queryClient.prefetchQuery('getProjectDetail');
     }
     return (
-        <CardDetailComponent updateCard={updateCard}  moveCard={moveCard} setDescriptionInput={setDescriptionInput} descriptionInput={descriptionInput} showDescriptionInput={showDescriptionInput} setShowDescriptionInput={setShowDescriptionInput} projectData={props.projectData} deleteCard={deleteCard} moveShow={moveShow} setMoveShow={setMoveShow} memberShow={memberShow} setMemberShow={setMemberShow} cardData={cardData} setCardDetailShow={props.setCardDetailShow} />
+        <CardDetailComponent updateCard={updateCard} idCard={props.id}  moveCard={moveCard} setDescriptionInput={setDescriptionInput} descriptionInput={descriptionInput} showDescriptionInput={showDescriptionInput} setShowDescriptionInput={setShowDescriptionInput} projectData={props.projectData} deleteCard={deleteCard} moveShow={moveShow} setMoveShow={setMoveShow} memberShow={memberShow} setMemberShow={setMemberShow} cardData={cardData} setCardDetailShow={props.setCardDetailShow} />
     )
 }
 
