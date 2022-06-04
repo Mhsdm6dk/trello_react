@@ -3,29 +3,44 @@ import CommentContainer from '../../Comment/CommentContainer';
 import styles from './styles.module.css';
 import * as SockJS from "sockjs-client";
 import {Stomp} from "@stomp/stompjs";
+import axiosConfig from "../../../share/axiosConfig";
 
 let stompClient = null;
 
 function CardDetailComponent(props) {
     const [contentComment, setContentComment] = useState('');
     let dataComment = props.cardData ? props.cardData.commentDTOList : [];
+    const [dataChange, setDataChange] = useState(dataComment);
+
+    const loadComment = () => {
+        axiosConfig.get(`/api/user/comments/card=${props.idCard}`)
+            .then((data) => {
+                setDataChange(data);
+                // dataComment = data;
+            })
+    }
 
     useEffect(() => {
         connect();
     }, []);
 
+    useEffect(() => {
+        setDataChange(dataComment);
+    }, [dataComment]);
+
 
     function connect() {
-        const socket = new SockJS('http://localhost:9090/trello-stomp-endpoint');
+        const socket = new SockJS('https://trello-like-vip.herokuapp.com/trello-stomp-endpoint');
         stompClient = Stomp.over(socket);
         stompClient.connect({}, function (frame) {
             console.log('Connected: ', frame);
 
             stompClient.subscribe('/topic/send-comment', function (data) {
                 const notification = JSON.parse(data.body);
-                console.log(notification);
-                dataComment = [...dataComment, notification];
-                console.log(dataComment);
+                loadComment();
+                // console.log(notification);
+                // dataComment = [...dataComment, notification];
+                // console.log(dataComment);
             });
         });
     }
@@ -123,12 +138,12 @@ function CardDetailComponent(props) {
                                            setContentComment(item.target.value);
                                        }}/>
                                 <button className={styles.saveButton} onClick={() => send()}>
-                                    Lưu
+                                    Comment
                                 </button>
                             </div>
                         </div>
-                        {dataComment.map((comment) => {
-                            return (<CommentContainer comment={comment}/>)
+                        {dataChange.map((comment) => {
+                            return (<CommentContainer comment={comment} idCard={props.idCard}/>)
                         })
                         }
                     </div>
@@ -178,16 +193,17 @@ function CardDetailComponent(props) {
                                             Chọn đích đến
                                         </p>
                                         {
-                                            props.projectData?.list.map(list => <div className={styles.listChoose}
-                                                                                     onClick={
-                                                                                         () => {
-                                                                                             props.moveCard(list?.listDTO?.id)
-                                                                                         }
-                                                                                     }>
-                                                {
-                                                    list?.listDTO?.title
-                                                }
-                                            </div>)
+                                            props.projectData?.list.map(list =>
+                                                <div className={styles.listChoose}
+                                                     onClick={
+                                                         () => {
+                                                             props.moveCard(list?.listDTO?.id)
+                                                         }
+                                                     }>
+                                                    {
+                                                        list?.listDTO?.title
+                                                    }
+                                                </div>)
                                         }
                                     </div>
                                 </div> : <></>

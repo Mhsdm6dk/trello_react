@@ -7,7 +7,7 @@ function CommentContainer(props) {
     const [commentInput,setCommentInput]=useState(props.comment.content);
 
     return (
-        <CommentComponent showHandleComment={showHandleComment} setShowHandleComment={setShowHandleComment}
+        <CommentComponent showHandleComment={showHandleComment} setShowHandleComment={setShowHandleComment} idCard={props.idCard}
                           commentInput={commentInput} setCommentInput={setCommentInput} dataComment={props.comment}/>
     )
 }
