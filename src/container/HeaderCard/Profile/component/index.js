@@ -1,5 +1,5 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import styles from './styles.module.css';
 function ProfileComponent(props) {
     const history = useHistory();
@@ -28,9 +28,11 @@ function ProfileComponent(props) {
                     </div>
                 </div>
                 <div className={styles.listDiv}>
-                    <p className={styles.div}>
+                    <Link to={'/profile'} className={styles.div} onClick={
+                        ()=>props.setShowProfile(false)
+                    }>
                         Hồ sơ và hiển thị
-                    </p>
+                    </Link>
                     <p className={styles.div}>
                         Hoạt động
                     </p>

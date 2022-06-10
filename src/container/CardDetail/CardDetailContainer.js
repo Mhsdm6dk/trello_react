@@ -16,7 +16,7 @@ function CardDetailContainer(props) {
     const deleteCard = async () => {
         await axiosConfig.delete(`/api/user/cards/id=${cardData?.cardDTO?.id}`);
         props.setCardDetailShow(false);
-        queryClient.prefetchQuery('getProjectDetail')
+        queryClient.invalidateQueries('getProjectDetail')
     }
     const moveCard = async (id) => {
         await axiosConfig.put('/api/user/cards', {
@@ -27,7 +27,7 @@ function CardDetailContainer(props) {
             title: cardData?.cardDTO?.title
         });
         props.setCardDetailShow(false);
-        queryClient.prefetchQuery('getProjectDetail');
+        queryClient.invalidateQueries('getProjectDetail');
     }
     const updateCard = async ()=>{
         await axiosConfig.put('/api/user/cards', {
@@ -38,7 +38,7 @@ function CardDetailContainer(props) {
             title: cardData?.cardDTO?.title
         });
         props.setCardDetailShow(false);
-        queryClient.prefetchQuery('getProjectDetail');
+        queryClient.invalidateQueries('getProjectDetail');
     }
     return (
         <CardDetailComponent updateCard={updateCard} idCard={props.id}  moveCard={moveCard} setDescriptionInput={setDescriptionInput} descriptionInput={descriptionInput} showDescriptionInput={showDescriptionInput} setShowDescriptionInput={setShowDescriptionInput} projectData={props.projectData} deleteCard={deleteCard} moveShow={moveShow} setMoveShow={setMoveShow} memberShow={memberShow} setMemberShow={setMemberShow} cardData={cardData} setCardDetailShow={props.setCardDetailShow} />

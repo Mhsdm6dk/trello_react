@@ -12,7 +12,7 @@ function BodyContainer(props) {
         axiosConfig.get('/api/user/token')
             .then((response) => {
                 setShowData(true);
-                localStorage.setItem('user', response);
+                localStorage.setItem('user', JSON.stringify(response));
             })
     }, [])
     return (

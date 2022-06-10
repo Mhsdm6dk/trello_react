@@ -15,13 +15,13 @@ function CardContainer(props) {
             listID: props.card.listDTO.id,
             title: cardNameInput
         })
-        queryClient.prefetchQuery('getProjectDetail')
+        queryClient.invalidateQueries('getProjectDetail')
         setInputShow(false);
     });
     const deleteFunction =async()=>{
         await axiosConfig.delete(`/api/user/lists/id=${props.card.listDTO.id}`)
         .then(()=>{
-            queryClient.prefetchQuery('getProjectDetail')
+            queryClient.invalidateQueries('getProjectDetail')
         })
     }
     return (
