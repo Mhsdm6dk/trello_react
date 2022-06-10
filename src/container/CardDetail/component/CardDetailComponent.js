@@ -11,17 +11,26 @@ function CardDetailComponent(props) {
     const [contentComment, setContentComment] = useState('');
     let dataComment = props.cardData ? props.cardData.commentDTOList : [];
     const [dataChange, setDataChange] = useState(dataComment);
+    const [user, setUser] = useState({});
 
     const loadComment = () => {
         axiosConfig.get(`/api/user/comments/card=${props.idCard}`)
             .then((data) => {
                 setDataChange(data);
-                // dataComment = data;
+            })
+    }
+
+
+    const loadToken = () => {
+        axiosConfig.get(`/api/user/token`)
+            .then((data) => {
+                setUser(data);
             })
     }
 
     useEffect(() => {
         connect();
+        loadToken();
     }, []);
 
     useEffect(() => {
@@ -38,10 +47,12 @@ function CardDetailComponent(props) {
             stompClient.subscribe('/topic/send-comment', function (data) {
                 const notification = JSON.parse(data.body);
                 loadComment();
-                // console.log(notification);
-                // dataComment = [...dataComment, notification];
-                // console.log(dataComment);
             });
+
+            stompClient.subscribe('/topic/delete-comment', function () {
+                loadComment();
+            });
+
         });
     }
 
@@ -51,16 +62,30 @@ function CardDetailComponent(props) {
         }
     }
 
-    function send() {
+    function send(id, content,createdDate, updatedDate) {
         if (stompClient) {
             const comment = {
-                userID: 1,
+                id : id,
+                userID: user.id,
                 cardID: props.idCard,
-                createdDate: new Date(),
-                updatedDate: new Date(),
-                content: contentComment
+                createdDate: createdDate,
+                updatedDate: updatedDate,
+                content: content
             };
             stompClient.send('/ws/chat.sendComment', {}, JSON.stringify(comment));
+            setContentComment('')
+        }
+    }
+
+    function deleteComment(id,content) {
+        if (stompClient) {
+            const comment = {
+                id : id,
+                userID: user.id,
+                cardID: props.idCard,
+                content: content
+            };
+            stompClient.send('/ws/chat.deleteComment', {}, JSON.stringify(comment));
         }
     }
 
@@ -130,20 +155,21 @@ function CardDetailComponent(props) {
                         </div>
                         <div className={styles.commentInputDiv}>
                             <div className={styles.commentAvatarBox}>
-                                NH
+                                {user.name ? user.name.substring(0, 3) : ''}
                             </div>
                             <div className={styles.commentInputBox}>
-                                <input placeholder='Viết bình luận...' className={styles.commentInput}
+                                <input placeholder='Viết bình luận...' className={styles.commentInput} value={contentComment}
                                        onChange={function (item) {
                                            setContentComment(item.target.value);
                                        }}/>
-                                <button className={styles.saveButton} onClick={() => send()}>
+                                <button className={styles.saveButton} onClick={() => send(null, contentComment, new Date(), new Date())}>
                                     Comment
                                 </button>
                             </div>
                         </div>
                         {dataChange.map((comment) => {
-                            return (<CommentContainer comment={comment} idCard={props.idCard}/>)
+                            return (<CommentContainer comment={comment} idUser={user.id} idCard={props.idCard} send={send}
+                                                      setContentComment={setContentComment} deleteComment={deleteComment}/>)
                         })
                         }
                     </div>

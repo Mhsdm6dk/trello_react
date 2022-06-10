@@ -8,7 +8,8 @@ function CommentContainer(props) {
 
     return (
         <CommentComponent showHandleComment={showHandleComment} setShowHandleComment={setShowHandleComment} idCard={props.idCard}
-                          commentInput={commentInput} setCommentInput={setCommentInput} dataComment={props.comment}/>
+                          commentInput={commentInput} setCommentInput={setCommentInput} dataComment={props.comment}
+                          send={props.send} setContentComment={props.setContentComment} idUser={props.idUser} deleteComment={props.deleteComment}/>
     )
 }
 
